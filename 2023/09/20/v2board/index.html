@@ -13,26 +13,23 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="https://define9.github.io/2023/09/05/exelaunchfail/"/>
+    <link rel="canonical" href="https://define9.github.io/2023/09/20/v2board/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="起因众所周知, Epic白嫖的分手厨房2可以与steam联机(Epic正常启动, Steam需要切换成测试版进入Team17平台) 但是, 使用Steam的我, 在玩分手厨房2正式版正常, 但是切换成测试版后,在加载界面转几圈后闪退, 没有任何提示! 分析与修复由于缺乏日志, 导致问题无从下手, 所以第一步还是想办法获取日志, 查看报错的地方,于是, 我搜索了 “exe闪退,查看错误日志”使用事件">
+        <meta name="description" content="环境 Ubuntu 20.04 纯净  过程安装Docker与Docker Compose1234567# 使用一键脚本快速部署docker环境curl -sSL https:&#x2F;&#x2F;get.docker.com&#x2F; | sh systemctl start docker systemctl enable docker# 安装docker-composecurl -L https:&#x2F;&#x2F;github.co">
 <meta property="og:type" content="article">
-<meta property="og:title" content="记一次steam胡闹厨房2测试版闪退">
-<meta property="og:url" content="https://define9.github.io/2023/09/05/exeLaunchFail/index.html">
+<meta property="og:title" content="v2board docker的安装">
+<meta property="og:url" content="https://define9.github.io/2023/09/20/v2board/index.html">
 <meta property="og:site_name" content="define9 blog">
-<meta property="og:description" content="起因众所周知, Epic白嫖的分手厨房2可以与steam联机(Epic正常启动, Steam需要切换成测试版进入Team17平台) 但是, 使用Steam的我, 在玩分手厨房2正式版正常, 但是切换成测试版后,在加载界面转几圈后闪退, 没有任何提示! 分析与修复由于缺乏日志, 导致问题无从下手, 所以第一步还是想办法获取日志, 查看报错的地方,于是, 我搜索了 “exe闪退,查看错误日志”使用事件">
+<meta property="og:description" content="环境 Ubuntu 20.04 纯净  过程安装Docker与Docker Compose1234567# 使用一键脚本快速部署docker环境curl -sSL https:&#x2F;&#x2F;get.docker.com&#x2F; | sh systemctl start docker systemctl enable docker# 安装docker-composecurl -L https:&#x2F;&#x2F;github.co">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://define9.github.io/images/exeLaunchFail/image-20230905233515824.png">
-<meta property="og:image" content="https://define9.github.io/images/exeLaunchFail/image-20230905233822710.png">
-<meta property="article:published_time" content="2023-09-05T14:35:41.000Z">
-<meta property="article:modified_time" content="2023-09-20T15:20:30.018Z">
+<meta property="article:published_time" content="2023-09-20T14:35:41.000Z">
+<meta property="article:modified_time" content="2023-09-23T01:32:15.871Z">
 <meta property="article:author" content="define9">
-<meta property="article:tag" content="日志">
+<meta property="article:tag" content="tutorial">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://define9.github.io/images/exeLaunchFail/image-20230905233515824.png">
     
     
     <!--- Icon Part-->
@@ -44,7 +41,7 @@
     
     <title>
         
-            记一次steam胡闹厨房2测试版闪退 -
+            v2board docker的安装 -
         
         define9 blog
     </title>
@@ -241,7 +238,7 @@
             
             
                 <div class="article-title">
-                    <h1 class="article-title-regular">记一次steam胡闹厨房2测试版闪退</h1>
+                    <h1 class="article-title-regular">v2board docker的安装</h1>
                 </div>
             
                 
@@ -263,15 +260,15 @@
                             <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2023-09-05 22:35:41</span>
-        <span class="mobile">2023-09-05 22:35</span>
+        <span class="desktop">2023-09-20 22:35:41</span>
+        <span class="mobile">2023-09-20 22:35</span>
         <span class="hover-info">创建</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-09-20 23:20:30</span>
-            <span class="mobile">2023-09-20 23:20</span>
+            <span class="desktop">2023-09-23 09:32:15</span>
+            <span class="mobile">2023-09-23 09:32</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -283,7 +280,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/%E6%97%A5%E5%BF%97/">日志</a>&nbsp;
+                        <a href="/tags/tutorial/">tutorial</a>&nbsp;
                     </li>
                 
             </ul>
@@ -306,25 +303,24 @@
             
 
             <div class="article-content markdown-body">
-                <h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>众所周知, Epic白嫖的分手厨房2可以与steam联机(Epic正常启动, Steam需要切换成测试版进入Team17平台)</p>
-<p>但是, 使用Steam的我, 在玩分手厨房2正式版正常, 但是切换成测试版后,在加载界面转几圈后闪退, 没有任何提示!</p>
-<h3 id="分析与修复"><a href="#分析与修复" class="headerlink" title="分析与修复"></a>分析与修复</h3><p>由于缺乏日志, 导致问题无从下手, 所以第一步还是想办法获取日志, 查看报错的地方,于是, 我搜索了 “exe闪退,查看错误日志”<a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42222865/article/details/108801344" >使用事件查看器 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/exeLaunchFail/image-20230905233515824.png"
-                      alt="image-20230905233515824"
-                ></p>
-<p>显示我 分手厨房2应用错误, 错误模块是nvcuda, 可是我现在cpu和显卡都是AMD的呀, 怎么会有英伟达的cuda报错, 才发现之前用的英伟达显卡, 装了驱动, 直接换了显卡装了AMD驱动后就没管了, 所以盲猜是英伟达驱动的问题.</p>
-<p>外加这里有一个OraylddDriver Device向日葵的虚拟显卡, 就把向日葵也卸载了.</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/exeLaunchFail/image-20230905233822710.png"
-                      alt="image-20230905233822710"
-                ></p>
-<p>卸载英伟达的相关驱动(可以在<code>控制面板\所有控制面板项\程序和功能</code>搜索<code>nvidia</code>)后, 无需重启, 重进游戏, 正常.</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>在运行exe等可执行程序时, 如果没有错误提示, 可以使用<code>事件查看器</code>查看其错误事件, 方便下一步分析</p>
+                <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
+<li>Ubuntu 20.04 纯净</li>
+</ul>
+<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><h3 id="安装Docker与Docker-Compose"><a href="#安装Docker与Docker-Compose" class="headerlink" title="安装Docker与Docker Compose"></a>安装Docker与Docker Compose</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用一键脚本快速部署docker环境</span></span><br><span class="line">curl -sSL https://get.docker.com/ | sh </span><br><span class="line">systemctl start docker </span><br><span class="line">systemctl <span class="built_in">enable</span> docker</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装docker-compose</span></span><br><span class="line">curl -L https://github.com/docker/compose/releases/download/v2.10.2/docker-compose-`<span class="built_in">uname</span> -s`-`<span class="built_in">uname</span> -m` -o /usr/local/bin/docker-compose &amp;&amp; sudo <span class="built_in">chmod</span> +x /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="拉取V2Board-Docker"><a href="#拉取V2Board-Docker" class="headerlink" title="拉取V2Board Docker"></a>拉取V2Board Docker</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/hashcott/v2board-docker.git</span><br><span class="line"><span class="built_in">cd</span> v2board-docker/</span><br><span class="line">git submodule update --init</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;  branch = master&#x27;</span> &gt;&gt; .gitmodules</span><br><span class="line">git submodule update --remote</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><p>分为修改<code>数据库配置</code>和<code>caddy配置</code>, 这里网上很多教程带过了</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 修改数据库信息, 修改 MYSQL_ROOT_PASSWORD(root密码) 和 MYSQL_DATABASE(数据库名)</span></span><br><span class="line">vi docker-compose.yaml</span><br><span class="line"></span><br><span class="line"><span class="comment">## 修改caddy服务器配置, 把http(s)://domain, http和https的这俩domain改成你的域名</span></span><br><span class="line">vi caddy.conf</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="启动v2board依赖的环境"><a href="#启动v2board依赖的环境" class="headerlink" title="启动v2board依赖的环境"></a>启动v2board依赖的环境</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="下载v2board并启动"><a href="#下载v2board并启动" class="headerlink" title="下载v2board并启动"></a>下载v2board并启动</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 进入刚刚启动的docker内环境, 以下指令都是在容器内执行</span></span><br><span class="line">docker-compose <span class="built_in">exec</span> www bash</span><br><span class="line"></span><br><span class="line"><span class="comment">## 下载composer.phar, 下载下来的是一个程序,网上好像有很多下载了承载页, 导致运行不了</span></span><br><span class="line">wget https://getcomposer.org/installer -O composer.phar</span><br><span class="line"></span><br><span class="line">php composer.phar</span><br><span class="line">php composer.phar install</span><br><span class="line"></span><br><span class="line"><span class="comment">## 安装v2board</span></span><br><span class="line">php artisan v2board:install</span><br><span class="line"></span><br><span class="line"><span class="comment">## 其中:</span></span><br><span class="line"><span class="comment">## 数据库地址： mysql</span></span><br><span class="line"><span class="comment">## 数据库名：(上面你修改的数据库名字 MYSQL_DATABASE)</span></span><br><span class="line"><span class="comment">## 数据库用户名：root</span></span><br><span class="line"><span class="comment">## 数据库密码：(上面你修改的数据库地址 MYSQL_ROOT_PASSWORD)</span></span><br><span class="line"><span class="comment">## 管理员邮箱: 输入你的邮箱</span></span><br><span class="line"><span class="comment">##</span></span><br><span class="line"><span class="comment">## 此时, 终端会打印 面板后台的地址, 例如:</span></span><br><span class="line"><span class="comment">## 一切就绪</span></span><br><span class="line"><span class="comment">## 管理员邮箱：xxxx@xx.com</span></span><br><span class="line"><span class="comment">## 管理员密码：xxxxxxxxxxxxxxxxxxxxx</span></span><br><span class="line"><span class="comment">## 访问 http(s)://你的站点/xxxx 进入管理面板，你可以在用户中心修改你的密码。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 启动队列</span></span><br><span class="line">php artisan horizon &amp;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="对接后端"><a href="#对接后端" class="headerlink" title="对接后端"></a>对接后端</h2><h3 id="XrayR"><a href="#XrayR" class="headerlink" title="XrayR"></a><a class="link"   target="_blank" rel="noopener" href="https://xrayr-project.github.io/XrayR-doc/xrayr-xia-zai-he-an-zhuang/install/one-click.html" >XrayR <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h3><h4 id="一键安装"><a href="#一键安装" class="headerlink" title="一键安装"></a>一键安装</h4><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(curl -Ls https://raw.githubusercontent.com/XrayR-project/XrayR-release/master/install.sh)</span><br></pre></td></tr></table></figure></div>
+
 
             </div>
 
@@ -332,16 +328,16 @@
                 <div class="post-copyright-info">
                     <div class="article-copyright-info-container">
     <ul>
-        <li><strong>标题:</strong> 记一次steam胡闹厨房2测试版闪退</li>
+        <li><strong>标题:</strong> v2board docker的安装</li>
         <li><strong>作者:</strong> define9</li>
-        <li><strong>创建于:</strong> 2023-09-05 22:35:41</li>
+        <li><strong>创建于:</strong> 2023-09-20 22:35:41</li>
         
             <li>
-                <strong>更新于:</strong> 2023-09-20 23:20:30
+                <strong>更新于:</strong> 2023-09-23 09:32:15
             </li>
         
         <li>
-            <strong>链接:</strong> https://define9.github.io/2023/09/05/exeLaunchFail/
+            <strong>链接:</strong> https://define9.github.io/2023/09/20/v2board/
         </li>
         <li>
             <strong>版权声明:</strong> 本文章采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a> 进行许可。
@@ -356,7 +352,7 @@
                 <ul class="post-tags-box">
                     
                         <li class="tag-item">
-                            <a href="/tags/%E6%97%A5%E5%BF%97/">#日志</a>&nbsp;
+                            <a href="/tags/tutorial/">#tutorial</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -367,29 +363,14 @@
             
                 <div class="article-nav">
                     
-                        <div class="article-prev">
-                            <a class="prev"
-                            rel="prev"
-                            href="/2023/09/20/v2board/"
-                            >
-                                <span class="left arrow-icon flex-center">
-                                    <i class="fa-solid fa-chevron-left"></i>
-                                </span>
-                                <span class="title flex-center">
-                                    <span class="post-nav-title-item">v2board docker的安装</span>
-                                    <span class="post-nav-item">上一篇</span>
-                                </span>
-                            </a>
-                        </div>
-                    
                     
                         <div class="article-next">
                             <a class="next"
                             rel="next"
-                            href="/2023/07/21/clash-parsers/"
+                            href="/2023/09/05/exeLaunchFail/"
                             >
                                 <span class="title flex-center">
-                                    <span class="post-nav-title-item">clash订阅在更新时注入自己的规则</span>
+                                    <span class="post-nav-title-item">记一次steam胡闹厨房2测试版闪退</span>
                                     <span class="post-nav-item">下一篇</span>
                                 </span>
                                 <span class="right arrow-icon flex-center">
@@ -464,8 +445,8 @@
                 <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">此页目录</div>
-        <div class="page-title">记一次steam胡闹厨房2测试版闪退</div>
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B5%B7%E5%9B%A0"><span class="nav-text">起因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%9E%90%E4%B8%8E%E4%BF%AE%E5%A4%8D"><span class="nav-text">分析与修复</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li></ol>
+        <div class="page-title">v2board docker的安装</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83"><span class="nav-text">环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%87%E7%A8%8B"><span class="nav-text">过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Docker%E4%B8%8EDocker-Compose"><span class="nav-text">安装Docker与Docker Compose</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8B%89%E5%8F%96V2Board-Docker"><span class="nav-text">拉取V2Board Docker</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-text">修改配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8v2board%E4%BE%9D%E8%B5%96%E7%9A%84%E7%8E%AF%E5%A2%83"><span class="nav-text">启动v2board依赖的环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BDv2board%E5%B9%B6%E5%90%AF%E5%8A%A8"><span class="nav-text">下载v2board并启动</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E6%8E%A5%E5%90%8E%E7%AB%AF"><span class="nav-text">对接后端</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#XrayR"><span class="nav-text">XrayR </span></a></li></ol></li></ol>
 
     </div>
 </div>
