@@ -4,11 +4,3 @@ theme = ["github.com/D-Sketon/hugo-theme-reimu"]
 title = 'My New Hugo Project'
 
 buildDrafts = true
-
-[permalinks]
-  posts = '/posts/:year/:month/:day/:slug/'
-  docs = '/docs/:slug/'
-
-[taxonomies]
-  tag = 'tags'
-  series = 'series'
