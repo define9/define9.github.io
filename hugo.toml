@@ -1,4 +1,47 @@
 baseURL = 'https://define9.github.io/'
-locale = 'en-us'
-title = 'My New Hugo Project'
+languageCode = 'en-us'
 theme = ["github.com/D-Sketon/hugo-theme-reimu"]
+title = 'My New Hugo Project'
+
+# 中文支持
+defaultContentLanguage = 'zh-cn'
+
+# 启用草稿
+buildDrafts = true
+
+# 永久链接设置
+[permalinks]
+  posts = '/posts/:year/:month/:day/:slug/'
+  docs = '/docs/:slug/'
+
+# 分类设置
+[taxonomies]
+  tag = 'tags'
+  series = 'series'
+
+# 网站地图
+enableSitemap = true
+
+# RSS
+generateRSS = true
+
+# 最短更新间隔
+minifyChangeDelay = "24h"
+
+[markup]
+  [markup.tableOfContents]
+    startLevel = 1
+    endLevel = 3
+  [markup.highlight]
+    codeFences = true
+    lineNos = true
+    noClasses = false
+
+# 数学公式 (如果主题支持)
+[params.math]
+  enable = true
+
+# 代码块 (如果主题支持)
+[params.code]
+  copy = true
+  maxLines = 500
