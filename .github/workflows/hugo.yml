@@ -44,5 +44,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           publish_dir: ./public
-          branch: gh-pages
+          branch: master
           commit_message: ${{ github.event.head_commit.message }}
