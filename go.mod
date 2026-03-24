@@ -2,4 +2,6 @@ module github.com/define9/define9.github.io
 
 go 1.26.1
 
-require github.com/D-Sketon/hugo-theme-reimu v0.15.2 // indirect
+require (
+	github.com/CaiJimmy/hugo-theme-stack/v4 v4.0.0-beta.15 // indirect
+)

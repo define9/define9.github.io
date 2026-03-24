@@ -1,6 +1,8 @@
 baseURL = 'https://define9.github.io/'
 languageCode = 'en-us'
-theme = ["github.com/D-Sketon/hugo-theme-reimu"]
-title = 'My New Hugo Project'
-
+title = 'define9 的博客'
+description = "技术笔记与生活随想"
 buildDrafts = true
+
+[[module.imports]]
+  path = "github.com/CaiJimmy/hugo-theme-stack/v4"
