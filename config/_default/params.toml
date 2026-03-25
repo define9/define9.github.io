@@ -1,4 +1,20 @@
 mainSections = ["posts"]
+
+[comments]
+  enabled = true
+  provider = "giscus"
+  [comments.giscus]
+    data_repo = "your-repo"
+    data_repo_id = "your-repo-id"
+    data_category = "Announcements"
+    data_category_id = "DIC_xxx"
+    data_mapping = "pathname"
+    data_strict = "0"
+    data_reactions_enabled = "1"
+    data_emit_metadata = "0"
+    data_input_position = "bottom"
+    data_theme = "preferred_color_scheme"
+    data_lang = "zh-CN"
 rssFullContent = true
 favicon = "/favicon.ico"
 
