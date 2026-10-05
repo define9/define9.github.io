@@ -1,0 +1,23 @@
+baseURL = 'https://example.org/'
+locale = 'zh-CN'
+title = 'My New Hugo Project'
+
+[module]
+[[module.imports]]
+path = "github.com/privatemaker/headless-cms"
+
+[outputs]
+home = ["HTML", "RSS", "HeadlessCMSConfig"]
+
+[security]
+  [security.http]
+    methods = ["GET", "POST"]
+    proxyFromEnvironment = false
+    # 允许 unpkg.com
+    urls = [
+      "^https://unpkg.com/",
+      "(?i)^https?://[a-z0-9]",
+      "! (?i)^https?://\\d+\\.",
+      "! (?i)localhost",
+      "! (?i)^https?://[^/?#]*@"
+    ]

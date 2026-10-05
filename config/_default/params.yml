@@ -1,0 +1,26 @@
+params:
+  headless_cms:
+    engine: "sveltia"
+    site_url: "https://your-site.org"
+    backend:
+      name: "github"
+      repo: "define9/define9.github.io"
+    collections:
+      - name: blog
+        icon: sell
+        folder: content/posts
+        label: Blog
+        path: '{{slug}}/index'
+        media_folder: 'images'
+        public_folder: 'images'
+        summary: "{{title | upper}} — {{publish_date | date('YYYY-MM-DD')}} — {{body | truncate(20, '...')}}"
+        fields:
+          - name: title
+            label: Title
+            widget: string
+          - name: publish_date
+            label: Publish Date
+            widget: datetime
+          - name: body
+            label: Body
+            widget: richtext
