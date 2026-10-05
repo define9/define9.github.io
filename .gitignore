@@ -1,0 +1,17 @@
+# Hugo 构建产物：由 Actions 生成并部署到 GitHub Pages，不入库
+/public/
+/resources/
+.hugo_build.lock
+
+# OS
+.DS_Store
+Thumbs.db
+
+# 编辑器
+.idea/
+.vscode/
+*.swp
+
+# 环境
+.env
+.env.*

@@ -1,0 +1,75 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+env:
+  HUGO_ENVIRONMENT: production
+  TZ: Asia/Shanghai
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # 完整历史：主题走 Hugo Modules，浅克隆会让 go.sum 校验与 .gitmodules 失效
+          fetch-depth: 0
+          submodules: recursive
+
+      # 版本号统一由 mise.toml 管理，本地与 CI 不会漂移
+      - name: Install toolchain (go + hugo-extended)
+        uses: jdx/mise-action@v2
+        with:
+          cache: true
+
+      - name: Report toolchain
+        run: |
+          go version
+          hugo version
+
+      # Hugo Pipes 的图片处理 / 资源指纹结果落在这里，跨次构建复用
+      - name: Restore Hugo cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/hugo_cache
+            resources/_gen
+          key: hugo-${{ runner.os }}-${{ hashFiles('go.sum', 'hugo.toml', 'config/**', 'layouts/**', 'assets/**') }}
+          restore-keys: hugo-${{ runner.os }}-
+
+      # vars.BASE_URL 是仓库级变量（Settings → Variables），留空则回落到 hugo.toml 里的 baseURL
+      - name: Build
+        env:
+          BASE_URL: ${{ vars.BASE_URL }}
+        run: hugo --gc --minify ${BASE_URL:+--baseURL "$BASE_URL"}
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
