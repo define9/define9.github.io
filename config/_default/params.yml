@@ -1,26 +1,207 @@
-params:
-  headless_cms:
-    engine: "sveltia"
-    site_url: "https://your-site.org"
-    backend:
-      name: "github"
-      repo: "define9/define9.github.io"
-    collections:
-      - name: blog
-        icon: sell
-        folder: content/posts
-        label: Blog
-        path: '{{slug}}/index'
-        media_folder: 'images'
-        public_folder: 'images'
-        summary: "{{title | upper}} — {{publish_date | date('YYYY-MM-DD')}} — {{body | truncate(20, '...')}}"
-        fields:
-          - name: title
-            label: Title
-            widget: string
-          - name: publish_date
-            label: Publish Date
-            widget: datetime
-          - name: body
-            label: Body
-            widget: richtext
+# cms
+headless_cms:
+  engine: "sveltia"
+  site_url: "https://your-site.org"
+  backend:
+    name: "github"
+    repo: "define9/define9.github.io"
+  collections:
+    - name: blog
+      icon: sell
+      folder: content/posts
+      label: Blog
+      path: '{{slug}}/index'
+      media_folder: 'images'
+      public_folder: 'images'
+      summary: "{{title | upper}} — {{publish_date | date('YYYY-MM-DD')}} — {{body | truncate(20, '...')}}"
+      fields:
+        - name: title
+          label: Title
+          widget: string
+        - name: publish_date
+          label: Publish Date
+          widget: datetime
+        - name: body
+          label: Body
+          widget: richtext
+
+# theme
+mainSections:
+  - "post"
+rssFullContent: true
+# Accepted values: "default", "lastmod"
+# default = see https://gohugo.io/quick-reference/glossary/#default-sort-order
+# lastmod = sort by last modified date, in descending order
+SortBy: "default"
+footer:
+  since: 2026
+  customText: ""
+dateFormat:
+  published: ":date_full"
+  lastUpdated: ":date_full"
+sidebar:
+  compact: false
+  avatar: ""
+article:
+  headingAnchor: false
+  math: false
+  toc: true
+  readingTime: true
+  list:
+    # Showing article tags in the list view (e.g. homepage, section pages)
+    showTags: false
+  license:
+    enabled: false
+    default: "Licensed under CC BY-NC-SA 4.0"
+  # Mermaid diagram configuration
+  # Diagrams are only loaded when mermaid code blocks are present
+  # Theme auto-switches based on site light/dark mode
+  mermaid:
+    # Visual style: classic or handDrawn (sketch style)
+    look: "classic"
+    # Theme for light mode: default, neutral, dark, forest, base, null
+    lightTheme: "default"
+    # Theme for dark mode: default, neutral, dark, forest, base, null
+    darkTheme: "dark"
+    # Custom theme variables for light mode (only works with lightTheme: base)
+    # lightThemeVariables: { primaryColor: "#ff0000" }
+    # Custom theme variables for dark mode (only works with darkTheme: base)
+    # darkThemeVariables: { primaryColor: "#00ff00" }
+    # Security level: strict (default), loose, antiscript, sandbox
+    # Set to "loose" to enable HTML labels like <br/>
+    securityLevel: "strict"
+    # Enable HTML labels in diagrams (requires securityLevel: loose)
+    htmlLabels: true
+    # Make diagram backgrounds transparent (default: false)
+    # Can also be set per-diagram with %%transparent%% directive
+    transparentBackground: false
+  alertIcon:
+    # Alert icons for different alert types (note, tip, important, warning, caution)
+    note: "📝"
+    tip: "💡"
+    important: "📌"
+    warning: "⚠️"
+    caution: "🚨"
+widgets:
+  homepage: []
+  page: []
+opengraph:
+  twitter:
+    site: ""
+    card: "summary_large_image"
+colorScheme:
+  toggle: true
+  default: "auto"
+imageProcessing:
+  autoOrient: false
+  external:
+    timeout: "5s"
+  content:
+    widths:
+      - 800
+      - 1600
+      - 2400
+    enabled: true
+  thumbnail:
+    enabled: true
+# GDPR Cookie Consent Configuration
+# When enabled, analytics and functional cookies require user consent
+cookies:
+  enabled: false
+  showSettings: true
+  categories:
+    analytics: true
+    functional: true
+comments:
+  enabled: true
+  provider: "disqus"
+  artalk:
+    serverUrl: ""
+    site: ""
+  disqusjs:
+    shortname: ""
+    apiUrl: ""
+    apiKey: ""
+    admin: ""
+    adminLabel: ""
+  utterances:
+    repo: ""
+    issueTerm: "pathname"
+    label: ""
+  beaudar:
+    repo: ""
+    issueTerm: "pathname"
+    label: ""
+    theme: ""
+  remark42:
+    host: ""
+    site: ""
+    locale: "en"
+    max_shown_comments: 15
+    show_email_subscription: true
+  vssue:
+    platform: ""
+    owner: ""
+    repo: ""
+    clientId: ""
+    clientSecret: ""
+    autoCreateIssue: false
+  # Waline client configuration see: https://waline.js.org/en/reference/component.html
+  waline:
+    serverURL: ""
+    lang: ""
+    pageview: ""
+    emoji:
+      - "https://unpkg.com/@waline/emojis@1.0.1/weibo"
+    requiredMeta:
+      - "name"
+      - "email"
+      - "url"
+    locale:
+      admin: "Admin"
+      placeholder: ""
+  twikoo:
+    envId: ""
+    region: ""
+    path: ""
+    lang: ""
+  # See https://cactus.chat/docs/reference/web-client/#configuration for description of the various options
+  cactus:
+    defaultHomeserverUrl: "https://matrix.cactus.chat:8448"
+    serverName: "cactus.chat"
+    siteName: ""  # You must insert a unique identifier here matching the one you registered (See https://cactus.chat/docs/getting-started/quick-start/#register-your-site)
+  giscus:
+    repo: ""
+    repoID: ""
+    category: ""
+    categoryID: ""
+    mapping: "title"
+    lightTheme: "light"
+    darkTheme: "dark_dimmed"
+    reactionsEnabled: 1
+    emitMetadata: 0
+    inputPosition: "top"
+    lang: "en"
+    strict: 0
+    loading: "lazy"
+  gitalk:
+    owner: ""
+    admin: ""
+    repo: ""
+    clientID: ""
+    clientSecret: ""
+    proxy: ""
+  cusdis:
+    host: "https://cusdis.com"
+    id: ""
+  # Comentario client configuration
+  comentario:
+    url: ""
+    autoInit: false
+    autoNonInteractiveSso: false
+    cssOverride: ""
+    lang: ""
+    liveUpdate: false
+    maxLevel: 0
+    noFonts: false
+    theme: ""
