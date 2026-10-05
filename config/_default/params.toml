@@ -1,0 +1,77 @@
+# theme
+# 注意：这些顶层标量必须写在所有 [table] / [[array]] 头之前，
+# 否则会被 TOML 解析进上一个数组元素里（曾导致 mainSections 被塞进
+# headless_cms.collections.fields[-1]，首页文章列表因此为空）。
+mainSections   = ["posts"]
+rssFullContent = true
+favicon        = "img/avatar.jpg"
+
+# cms
+[headless_cms]
+engine = "sveltia"
+site_url = "https://your-site.org"
+
+[headless_cms.backend]
+name = "github"
+repo = "define9/define9.github.io"
+
+[[headless_cms.collections]]
+name = "blog"
+icon = "sell"
+folder = "content/posts"
+label = "Blog"
+path = '{{slug}}/index'
+media_folder = 'images'
+public_folder = 'images'
+summary = "{{title | upper}} — {{publish_date | date('YYYY-MM-DD')}} — {{body | truncate(20, '...')}}"
+
+[[headless_cms.collections.fields]]
+name = "title"
+label = "Title"
+widget = "string"
+
+[[headless_cms.collections.fields]]
+name = "publish_date"
+label = "Publish Date"
+widget = "datetime"
+
+[[headless_cms.collections.fields]]
+name = "body"
+label = "Body"
+widget = "richtext"
+
+[footer]
+    since = 2020
+
+[sidebar]
+    emoji    = "✏️"
+    subtitle = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    avatar   = "https://thirdqq.qlogo.cn/g?b=sdk&s=5&nk=924753116"
+
+[article]
+    [article.license]
+        enabled = true
+        default = "Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)"
+
+[widgets]
+    homepage = [
+        { type = "search" },
+        { type = "archives", params = { limit = 5 } },
+        { type = "categories", params = { limit = 10 } },
+        { type = "tag-cloud", params = { limit = 10 } },
+    ]
+    page     = [{ type = "toc" }]
+
+[comments]
+    # See complete configuration in config/_default/params.toml
+    enabled  = true
+    provider = "disqus"
+
+# GDPR Cookie Consent Configuration
+# When enabled, analytics and functional cookies require user consent
+[cookies]
+    enabled = false
+
+    [cookies.categories]
+        analytics  = true
+        functional = true

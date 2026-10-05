@@ -1,6 +1,6 @@
 baseURL = 'https://example.org/'
 locale = 'zh-CN'
-title = 'My New Hugo Project'
+title = 'define9 notes'
 
 [module]
 [[module.imports]]
