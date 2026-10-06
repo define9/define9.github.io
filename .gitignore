@@ -3,6 +3,9 @@
 /resources/
 .hugo_build.lock
 
+# Hugo 生成的 JS 路径映射，含主题绝对路径，每次换 cacheDir 都会变
+/assets/jsconfig.json
+
 # OS
 .DS_Store
 Thumbs.db

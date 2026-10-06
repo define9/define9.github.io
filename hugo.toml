@@ -12,6 +12,12 @@ path = "github.com/CaiJimmy/hugo-theme-stack/v4"
 [outputs]
 home = ["HTML", "RSS", "HeadlessCMSConfig"]
 
+# 图片缓存跟随 --cacheDir，避免落在项目目录的 resources/ 里
+# https://gohugo.io/host-and-deploy/host-on-github-pages/ Step 3
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
+
 [security]
   [security.http]
     methods = ["GET", "POST"]
