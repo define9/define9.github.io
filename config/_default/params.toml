@@ -9,7 +9,7 @@ favicon        = "img/avatar.jpg"
 # cms
 [headless_cms]
 engine = "sveltia"
-site_url = "https://your-site.org"
+site_url = "https://define9.github.io"
 
 [headless_cms.backend]
 name = "github"
