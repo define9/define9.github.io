@@ -14,6 +14,8 @@ site_url = "https://define9.github.io"
 [headless_cms.backend]
 name = "github"
 repo = "define9/define9.github.io"
+base_url = "https://sveltia-cms-auth.define9.workers.dev"
+auth_endpoint = "auth"
 
 [[headless_cms.collections]]
 name = "blog"
