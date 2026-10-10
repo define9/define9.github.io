@@ -18,3 +18,6 @@ Thumbs.db
 # 环境
 .env
 .env.*
+
+# 旧 Hexo 博客抓取备份（原始 HTML + 转换脚本），不部署
+/_archive/

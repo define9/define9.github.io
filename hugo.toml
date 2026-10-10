@@ -12,6 +12,11 @@ path = "github.com/CaiJimmy/hugo-theme-stack/v4"
 [outputs]
 home = ["HTML", "RSS", "HeadlessCMSConfig"]
 
+# 文章 URL 用 slug（内含旧站日期路径），去掉 /posts/ 前缀，
+# 例如 https://define9.github.io/2023/07/13/showMeIP/
+[permalinks]
+posts = "/:slug/"
+
 # 图片缓存跟随 --cacheDir，避免落在项目目录的 resources/ 里
 # https://gohugo.io/host-and-deploy/host-on-github-pages/ Step 3
 [caches]
