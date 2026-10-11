@@ -43,6 +43,7 @@ jobs:
       - name: Install Zola
         run: |
           echo "Installing Zola ${ZOLA_VERSION}..."
+          mkdir -p "${HOME}/.local"
           curl -sfL --output-dir "${RUNNER_TEMP}" -O \
             "https://github.com/getzola/zola/releases/download/v${ZOLA_VERSION}/zola-v${ZOLA_VERSION}-x86_64-unknown-linux-musl.tar.gz"
           tar -C "${HOME}/.local" -xzf "${RUNNER_TEMP}/zola-v${ZOLA_VERSION}-x86_64-unknown-linux-musl.tar.gz" zola
@@ -52,9 +53,9 @@ jobs:
         run: |
           echo "Installing Pagefind ${PAGEFIND_VERSION}..."
           curl -sfL --output-dir "${RUNNER_TEMP}" -O \
-            "https://github.com/Pagefind/pagefind/releases/download/v${PAGEFIND_VERSION}/pagefind-v${PAGEFIND_VERSION}-linux-x64.tar.gz"
+            "https://github.com/Pagefind/pagefind/releases/download/v${PAGEFIND_VERSION}/pagefind-v${PAGEFIND_VERSION}-x86_64-unknown-linux-musl.tar.gz"
           mkdir -p "${HOME}/.local/pagefind"
-          tar -C "${HOME}/.local/pagefind" -xzf "${RUNNER_TEMP}/pagefind-v${PAGEFIND_VERSION}-linux-x64.tar.gz"
+          tar -C "${HOME}/.local/pagefind" -xzf "${RUNNER_TEMP}/pagefind-v${PAGEFIND_VERSION}-x86_64-unknown-linux-musl.tar.gz"
           echo "${HOME}/.local/pagefind" >> "${GITHUB_PATH}"
 
       - name: Log tool versions
