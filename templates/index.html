@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}{{ config.title }}{% endblock title %}
+
+{% block content %}
+  {{ section.content | safe }}
+
+  <h2>最新文章</h2>
+  {% set posts = get_section(path='posts/_index.md') %}
+  {% for page in posts.pages %}
+    <article class="post-item">
+      <time datetime="{{ page.date }}">{{ page.date | date(format='%Y-%m-%d') }}</time>
+      <a href="{{ page.permalink }}">{{ page.title }}</a>
+      {% if page.description %}<p class="desc">{{ page.description }}</p>{% endif %}
+      {% if page.taxonomies.tags %}
+        <p class="tags">
+          {% for name in page.taxonomies.tags %}<a class="tag" href="{{ config.base_url }}/tags/{{ name }}/">{{ name }}</a>{% endfor %}
+        </p>
+      {% endif %}
+    </article>
+  {% else %}
+    <p>还没有文章。</p>
+  {% endfor %}
+{% endblock content %}

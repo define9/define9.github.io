@@ -1,0 +1,59 @@
+base_url = "https://define9.github.io"
+title = "define9 notes"
+description = "折腾服务器、魔改工具、随手记点技术笔记。"
+default_language = "zh-CN"
+author = "define9"
+
+generate_feeds = true
+feed_filenames = ["rss.xml"]
+feed_limit = 20
+generate_sitemap = true
+generate_robots_txt = true
+compile_sass = true
+
+# Zola 0.23 会把 content 也当 Tera 模板渲染。旧文（hugo-cms 那篇）正文里有
+# `path: '{{slug}}/index'` 这类字面量，会被当成变量而报错，全站关掉模板化。
+skip_content_templating = ["**/*.md"]
+
+# 保持 name = "tags"：旧站（Hugo）生成的就是 /tags/xxx/，且 frontmatter 里的
+# tags 字段不用改写。
+taxonomies = [{ name = "tags", render = true, feed = false }]
+
+# 旧站（Hugo）的文章 URL 形如 /2023/07/13/showMeIP/、/posts/rm/，
+# 含大小写与中文。slugify 全关才能原样输出，不破坏已收录的老链接。
+[slugify]
+paths = "off"
+taxonomies = "off"
+anchors = "safe"
+
+[markdown]
+[markdown.highlighting]
+light_theme = "github-light"
+dark_theme = "github-dark"
+
+# 正文里的第三方链接常年 403/502，zola check 会因此失败；
+# 内部链接（本站 URL）仍按 error 处理。
+[link_checker]
+internal_level = "error"
+external_level = "warn"
+
+[extra]
+since = 2020
+author_bio = "折腾派。服务器、CI、魔改工具，踩过的坑写这儿。"
+footer_license = "CC BY-NC-SA 4.0"
+
+# 侧栏 / 页脚社交链接
+[extra.social]
+github = "https://github.com/define9"
+
+# giscus 评论。需要仓库开启 Discussions，并建一个 category（Announcements 除外）：
+#   gh api -X PUT repos/define9/define9.github.io -f has_discussions=true
+# category_id 用 GraphQL 查：
+#   gh api graphql -f query='{ repository(owner:"define9",name:"define9.github.io")
+#     { discussionCategories(first:10){ nodes { id name } } } }'
+[extra.giscus]
+repo = "define9/define9.github.io"
+repo_id = "R_kgDOU8dogA"
+category = "General"
+category_id = "DIC_kwDOU8dogM4DHiMa"
+mapping = "pathname"

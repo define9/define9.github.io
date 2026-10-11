@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}搜索 · {{ config.title }}{% endblock title %}
+
+{% block content %}
+  <h1>搜索</h1>
+  <form id="search-form" action="" role="search" onsubmit="return false;">
+    <input id="search-input" type="search" placeholder="输入关键词…" autocomplete="off" />
+  </form>
+  <p id="search-status"></p>
+  <ul id="search-results"></ul>
+  <noscript>搜索由 Pagefind 提供，需要 JavaScript。也可以直接看 <a href="{{ config.base_url }}/archives/">归档</a>。</noscript>
+  <script src="{{ config.base_url }}/js/search.js" defer></script>
+{% endblock content %}

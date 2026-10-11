@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}{{ taxonomy }} · {{ config.title }}{% endblock title %}
+
+{% block content %}
+  <h1>标签</h1>
+  <ul class="taxonomy-list">
+    {% for term in terms | sort(attribute='page_count') | reverse %}
+      <li><a href="{{ term.permalink }}">{{ term.name }}</a> <span class="count">{{ term.page_count }}</span></li>
+    {% endfor %}
+  </ul>
+{% endblock content %}

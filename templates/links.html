@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} · {{ config.title }}{% endblock title %}
+
+{% block content %}
+  <h1>{{ page.title }}</h1>
+  {{ page.content }}
+  <ul class="link-cards">
+    {% for link in page.extra.links %}
+      <li>
+        <a href="{{ link.website }}">
+          {% if link.image %}<img src="{{ link.image }}" alt="{{ link.title }}" loading="lazy" />{% endif %}
+          <span>
+            <strong>{{ link.title }}</strong>
+            {% if link.description %}<em>{{ link.description }}</em>{% endif %}
+          </span>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock content %}

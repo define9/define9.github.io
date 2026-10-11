@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="{{ config.default_language }}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+    <meta name="description" content="{% block description %}{{ config.description }}{% endblock description %}" />
+    <link rel="icon" href="{{ config.base_url }}/img/avatar.jpg" />
+    <link rel="stylesheet" href="{{ config.base_url }}/main.css" />
+    <link rel="alternate" type="application/rss+xml" title="{{ config.title }}" href="{{ config.base_url }}/rss.xml" />
+    {% block head %}{% endblock head %}
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="site-title" href="{{ config.base_url }}/">{{ config.title }}</a>
+      <nav>
+        <a href="{{ config.base_url }}/posts/">文章</a>
+        <a href="{{ config.base_url }}/archives/">归档</a>
+        <a href="{{ config.base_url }}/tags/">标签</a>
+        <a href="{{ config.base_url }}/search/">搜索</a>
+        <a href="{{ config.base_url }}/about/">关于</a>
+        <a href="{{ config.base_url }}/links/">友链</a>
+        {% for key, value in config.extra.social %}
+          <a href="{{ value }}">{{ key }}</a>
+        {% endfor %}
+        <a href="{{ config.base_url }}/rss.xml">RSS</a>
+      </nav>
+    </header>
+
+    <main>
+      {% block content %}{% endblock content %}
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        &copy; {{ config.extra.since }}–2026 {{ config.author }} · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">{{ config.extra.footer_license }}</a>
+      </p>
+      <p>{{ config.extra.author_bio }}</p>
+    </footer>
+  </body>
+</html>
