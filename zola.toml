@@ -48,7 +48,7 @@ home_posts = 12
 # 顶部导航用 frontmatter 的 title
 home_title = "首页"
 since = 2020
-avatar = "/img/avatar.jpg"
+avatar = "https://thirdqq.qlogo.cn/g?b=sdk&s=5&nk=924753116"
 author_bio = "折腾派。服务器、CI、魔改工具，踩过的坑写这儿。"
 footer_license = "CC BY-NC-SA 4.0"
 
