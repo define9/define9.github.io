@@ -35,6 +35,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
+        with:
+          # Vellum 主题是 submodule，不拉下来构建会找不到 theme.toml
+          submodules: recursive
 
       - name: Setup Pages
         id: pages
