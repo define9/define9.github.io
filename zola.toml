@@ -1,5 +1,5 @@
-# Vellum 主题（themes/vellum）。本地是 symlink 指向 ../zola-theme-vellum，
-# 发到远程后换成 git submodule add <repo> themes/vellum，配置不用改。
+# Vellum 主题。Zola 会自动补 themes/ 前缀，所以这里写 vellum 而不是 themes/vellum。
+# 更新主题：git submodule update --remote themes/vellum && git add themes/vellum
 theme = "vellum"
 
 base_url = "https://define9.github.io"

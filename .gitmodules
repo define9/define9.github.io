@@ -1,0 +1,3 @@
+[submodule "themes/vellum"]
+	path = themes/vellum
+	url = git@github.com:define9/zola-theme-vellum.git
