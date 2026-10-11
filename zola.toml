@@ -1,3 +1,7 @@
+# Vellum 主题（themes/vellum）。本地是 symlink 指向 ../zola-theme-vellum，
+# 发到远程后换成 git submodule add <repo> themes/vellum，配置不用改。
+theme = "vellum"
+
 base_url = "https://define9.github.io"
 title = "define9 notes"
 description = "折腾服务器、魔改工具、随手记点技术笔记。"
@@ -38,7 +42,13 @@ internal_level = "error"
 external_level = "warn"
 
 [extra]
+# 首页卡片取 posts section，最多 12 篇
+default_section = "posts"
+home_posts = 12
+# 顶部导航用 frontmatter 的 title
+home_title = "首页"
 since = 2020
+avatar = "/img/avatar.jpg"
 author_bio = "折腾派。服务器、CI、魔改工具，踩过的坑写这儿。"
 footer_license = "CC BY-NC-SA 4.0"
 

@@ -1,6 +1,6 @@
 +++
-title = "About"
-description = "Everything you need to know about this site and its author."
+title = "关于"
+description = "关于本站与作者。"
 date = 2026-01-26
 updated = 2026-01-26
 aliases = ["/about/", "/page/about/"]

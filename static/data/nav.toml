@@ -1,0 +1,24 @@
+# 顶部导航：覆盖主题自带的 static/data/nav.toml
+[[nav]]
+title = "首页"
+path = "/"
+
+[[nav]]
+title = "文章"
+path = "/posts/"
+
+[[nav]]
+title = "归档"
+path = "/archives/"
+
+[[nav]]
+title = "友链"
+path = "/links/"
+
+[[nav]]
+title = "搜索"
+path = "/search/"
+
+[[nav]]
+title = "关于"
+path = "/about/"

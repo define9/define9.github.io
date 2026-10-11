@@ -1,3 +1,6 @@
 public/
 .DS_Store
 .zola-cache/
+
+# 试用 Vellum 主题时的本地 symlink（正式接入用 git submodule）
+themes/vellum

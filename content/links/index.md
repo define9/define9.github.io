@@ -1,8 +1,8 @@
 +++
-title = "Links"
+title = "友链"
 aliases = ["/links/", "/page/links/"]
 path = "links"
-template = "links.html"
+template = "friends.html"
 
 [extra]
 comments = false
