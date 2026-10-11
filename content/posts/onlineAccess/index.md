@@ -5,6 +5,9 @@ updated = 2024-10-27T18:09:53+08:00
 path = "2023/07/13/onlineAccess"
 aliases = ["/2023/07/13/onlineAccess/"]
 
+[extra]
+cover = "/img/posts/onlineAccess.png"
+
 [taxonomies]
 tags = ["教程"]
 +++

@@ -4,6 +4,9 @@ date = 2023-07-21T22:37:10+08:00
 updated = 2026-01-10T10:05:09+08:00
 path = "2023/07/21/clash-parsers"
 
+[extra]
+cover = "/img/posts/clash-parsers.png"
+
 [taxonomies]
 tags = ["教程"]
 +++
